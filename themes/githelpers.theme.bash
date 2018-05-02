@@ -104,6 +104,7 @@ function _git-remote-info {
   [[ "$(_git-upstream)" == "" ]] && return
 
   local same_branch_name=
+  local remote_info=
   [[ "$(_git-branch)" == "$(_git-upstream-branch)" ]] && same_branch_name=true
   if ([[ "${SCM_GIT_SHOW_REMOTE_INFO}" = "auto" ]] && [[ "$(_git-num-remotes)" -ge 2 ]]) ||
       [[ "${SCM_GIT_SHOW_REMOTE_INFO}" = "true" ]]; then
